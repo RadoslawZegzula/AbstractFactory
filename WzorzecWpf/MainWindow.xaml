@@ -1,0 +1,88 @@
+﻿<Window x:Class="WzorzecWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WzorzecWpf"
+        xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+         Height="600" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>
+        <Grid Height="60" VerticalAlignment="Top" Background="#FF9C27B0">
+<TextBlock Text="Bulid your computer!" Foreground="White" HorizontalAlignment="Center" FontSize="22" FontFamily="Comic Sans MS" Margin="0 10 0 0"></TextBlock>
+            <Button x:Name="TurnOff" HorizontalAlignment="Right" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Click="TurnOff_OnClick">
+                <materialDesign:PackIcon Kind="Power" ></materialDesign:PackIcon>
+            </Button>
+        </Grid>
+        <Grid Margin="0 60 0 0">
+            <dragablz:TabablzControl>
+                <dragablz:TabablzControl.InterTabController>
+                  <dragablz:InterTabController></dragablz:InterTabController>
+                </dragablz:TabablzControl.InterTabController>
+                <TabItem>
+                    <TabItem.Header>
+                        <materialDesign:PackIcon Kind="Home" Foreground="{DynamicResource PrimaryHueLightBrush}"/>
+                    </TabItem.Header>
+                    <ListBox VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Comic Sans MS" FontSize="20">
+                        <TextBlock Margin="10 10 10 10" Text="Main components:" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ComboBox >
+                            <ComboBoxItem IsSelected="True" >Click to choose your CPU!</ComboBoxItem>
+                            <ComboBoxItem Name="CPUorigin1" Selected="CPUorigin1_OnSelected">Polish CPU</ComboBoxItem>
+                            <ComboBoxItem Name="CPUorigin2" Selected="CPUorigin2_OnSelected">China CPU</ComboBoxItem>
+                            <ComboBoxItem Name="CPUorigin3" Selected="CPUorigin3_OnSelected">Germany CPU</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox >
+                            <ComboBoxItem IsSelected="True">Click to choose your GPU</ComboBoxItem>
+                            <ComboBoxItem Name="GPUorigin1" Selected="GPUorigin1_OnSelected">Polish GPU</ComboBoxItem>
+                            <ComboBoxItem Name="GPUorigin2" Selected="GPUorigin2_OnSelected">China GPU</ComboBoxItem>
+                            <ComboBoxItem Name="GPUorigin3" Selected="GPUorigin3_OnSelected">Germany GPU</ComboBoxItem>
+                        </ComboBox>
+
+                        <ComboBox >
+                            <ComboBoxItem IsSelected="True">Click to choose your MotherBoard!</ComboBoxItem>
+                            <ComboBoxItem Name="MotherBoardorigin1" Selected="MotherBoardorigin1_OnSelected">Polish MotherBoard</ComboBoxItem>
+                            <ComboBoxItem Name="MotherBoardorigin2" Selected="MotherBoardorigin2_OnSelected">China MotherBoard</ComboBoxItem>
+                            <ComboBoxItem Name="MotherBoardorigin3" Selected="MotherBoardorigin3_OnSelected">Germany MotherBoard</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox >
+                            <ComboBoxItem IsSelected="True">Click to choose your Sticker!</ComboBoxItem>
+                            <ComboBoxItem Name="Stickerorigin1" Selected="Stickerorigin1_OnSelected">Polish Sticker</ComboBoxItem>
+                            <ComboBoxItem Name="Stickerorigin2" Selected="Stickerorigin2_OnSelected">China Sticker</ComboBoxItem>
+                            <ComboBoxItem Name="Stickerorigin3" Selected="Stickerorigin3_OnSelected">Germany Sticker</ComboBoxItem>
+                        </ComboBox>
+
+                        <TextBlock Margin="10 10 10 10" Name="Summary"  Text="" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Margin="10 10 10 10" Name="Sum"  Text="" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </ListBox>
+                </TabItem>
+                <TabItem Header="News">
+                    <ListBox VerticalAlignment="Center" Padding="19 10 10 10" HorizontalAlignment="Left" FontFamily="Comic Sans MS" FontSize="20">
+                        
+                        <TextBlock Text="1.1v ( 2019:11:12 )    New China processors added! " Margin="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Text="1.0v ( 2019:12:12 )    New Polish processors added!" Margin="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Text="0.9v ( 2019:9:12 )    New processors added!" Margin="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Text="0.5v ( 2019:9:12 )   New premium gamer stickers added!" Margin="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                    </ListBox>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        <materialDesign:PackIcon Kind="GithubFace" Foreground="{DynamicResource PrimaryHueLightBrush}"/>
+                    </TabItem.Header>
+                    <ListBox VerticalAlignment="Center" Padding="19 10 10 10" HorizontalAlignment="Center" FontFamily="Comic Sans MS" FontSize="20">
+                        <TextBlock Text="Contact:" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="30"/>
+                        <TextBlock Text="email:  myEmail@email.com" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Text="linkedin:  mylinkedinname" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Text="github:  mygithub" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </ListBox>
+                        
+
+
+                </TabItem>
+
+
+            </dragablz:TabablzControl>
+        </Grid>
+    </Grid>
+</Window>
