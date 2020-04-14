@@ -2,9 +2,9 @@
 
 namespace WzorzecWpf
 {
-    internal class CreatorCPU
+    internal class CreatorCpu
     {
-        public Cpu CreateCPU(EOriginCountry eOriginCountry)
+        public Cpu CreateCpu(EOriginCountry eOriginCountry)
         {
             Cpu cpu = null;
 

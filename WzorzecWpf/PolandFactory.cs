@@ -2,7 +2,7 @@
 
 namespace WzorzecWpf
 {
-    class PolandFactory
+    internal class PolandFactory
     {
         public Gpu CreateGpu()
         {

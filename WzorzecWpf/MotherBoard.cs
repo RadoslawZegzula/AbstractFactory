@@ -5,7 +5,6 @@ namespace WzorzecWpf
     {
         public int Size { get; set; }
         public double Price { get; set; }
-
     }
 
     public class PolandMotherboard : Motherboard

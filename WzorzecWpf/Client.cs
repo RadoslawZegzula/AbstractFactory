@@ -16,8 +16,8 @@ namespace WzorzecWpf
 
         public void OrderCpu(EOriginCountry eOriginCountry)
         {
-            var creatorCpu = new CreatorCPU();
-            _cpu = creatorCpu.CreateCPU(eOriginCountry);
+            var creatorCpu = new CreatorCpu();
+            _cpu = creatorCpu.CreateCpu(eOriginCountry);
         }
 
         public void OrderMotherBoard(EOriginCountry eOriginCountry)

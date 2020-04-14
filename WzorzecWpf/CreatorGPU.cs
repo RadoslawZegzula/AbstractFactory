@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 
 namespace WzorzecWpf
 {
@@ -16,7 +15,6 @@ namespace WzorzecWpf
                     break;
                 case EOriginCountry.China:
                     gpu = new ChinaFactory().CreateGpu();
-                    Debug.WriteLine("creator GPU");
                     break;
                 case EOriginCountry.Germany:
                     gpu = new GermanyFactory().CreateGpu();

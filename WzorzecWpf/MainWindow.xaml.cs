@@ -3,19 +3,14 @@ using System.Windows;
 
 namespace WzorzecWpf
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {     
-        private readonly Client _radek;
+        private readonly Client _client;
 
         public MainWindow()
         {
             InitializeComponent();
-            _radek = new Client();
-
-
+            _client = new Client();
         }
 
         private void TurnOff_OnClick(object sender, RoutedEventArgs e)
@@ -28,22 +23,22 @@ namespace WzorzecWpf
             switch (phrase)
             {
                 case "CPU":
-                    _radek.OrderCpu(eOriginCountry);
+                    _client.OrderCpu(eOriginCountry);
                     break;
                 case "GPU":
-                    _radek.OrderGpu(eOriginCountry);
+                    _client.OrderGpu(eOriginCountry);
                     break;
                 case "MotherBoard":
-                    _radek.OrderMotherBoard(eOriginCountry);
+                    _client.OrderMotherBoard(eOriginCountry);
                     break;
                 case "Sticker":
-                    _radek.OrderSticker(eOriginCountry);                   
+                    _client.OrderSticker(eOriginCountry);                   
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(eOriginCountry), eOriginCountry, null);
             }
 
-            var computer = _radek.CreateComputer();           
+            var computer = _client.CreateComputer();           
             Summary.Text = computer.ToString();
             Sum.Text = computer.Price();
         }
