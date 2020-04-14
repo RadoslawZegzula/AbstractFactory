@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WzorzecWpf
 {
-    class CreatorSticker
+    internal class CreatorSticker
     {
         public Sticker CreateSticker(EOriginCountry eOriginCountry)
         {
@@ -23,10 +19,11 @@ namespace WzorzecWpf
                 case EOriginCountry.Germany:
                     sticker = new GermanyFactory().CreateSticker();
                     break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(eOriginCountry), eOriginCountry, null);
             }
 
             return sticker;
         }
     }
-
 }

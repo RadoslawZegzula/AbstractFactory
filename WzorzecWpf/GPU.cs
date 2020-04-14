@@ -1,30 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WzorzecWpf
 {
-    public abstract class GPU
+    public abstract class Gpu
     {
         public ConsoleColor Color { get; set; }
         public double Price { get; set; }
-
     }
 
-    public class PolandGPU : GPU
+    public class PolandGpu : Gpu
     {
-
     }
 
-    public class ChinaGPU : GPU
+    public class ChinaGpu : Gpu
     {
-
     }
 
-    public class GermanyGPU : GPU
+    public class GermanyGpu : Gpu
     {
-
     }
 }

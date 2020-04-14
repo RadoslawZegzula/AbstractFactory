@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WzorzecWpf
 {
-    class GermanyFactory
+    internal class GermanyFactory
     {
-
-        public GPU CreateGPU()
+        public Gpu CreateGpu()
         {
-            var gpu = new GermanyGPU
+            var gpu = new GermanyGpu
             {
                 Color = ConsoleColor.Magenta,
                 Price = 88.0
@@ -19,9 +14,9 @@ namespace WzorzecWpf
             return gpu;
         }
 
-        public MotherBoard CreateMotherBoard()
+        public Motherboard CreateMotherBoard()
         {
-            var motherboad = new GermanyMotherBoard
+            var motherboad = new GermanyMotherboard
             {
                 Size = 150,
                 Price = 88.0
@@ -31,7 +26,7 @@ namespace WzorzecWpf
 
         public CPU CreateCPU()
         {
-            var cpu = new GermanyCPU
+            var cpu = new GermanyCpu
             {
                 Cores = 12,
                 Price = 88.0
@@ -48,8 +43,5 @@ namespace WzorzecWpf
             };
             return sticker;
         }
-
-
-
     }
 }

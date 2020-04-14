@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace WzorzecWpf
 {
     public abstract class CPU
@@ -12,19 +7,15 @@ namespace WzorzecWpf
         public double Price { get; set; }
     }
 
-    public class PolandCPU : CPU
+    public class PolandCpu : CPU
     {
-
     }
 
-    public class ChinaCPU : CPU
+    public class ChinaCpu : CPU
     {
-
     }
 
-    public class GermanyCPU : CPU
+    public class GermanyCpu : CPU
     {
-
     }
-
 }

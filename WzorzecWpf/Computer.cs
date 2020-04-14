@@ -1,39 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace WzorzecWpf
 {
-    class Computer
+    internal class Computer
     {
+        private readonly CPU _cpu;
+        private readonly Gpu _gpu;
+        private readonly Motherboard _motherboard;
+        private readonly Sticker _sticker;
 
-        private GPU _gpu;
-        private CPU _cpu;
-        private MotherBoard _motherBoard;
-        private Sticker _sticker;
-
-        public Computer(MotherBoard motherBoard, GPU gpu, CPU cpu, Sticker sticker)
+        public Computer(Motherboard motherboard, Gpu gpu, CPU cpu, Sticker sticker)
         {
-            this._motherBoard = motherBoard;
-            this._gpu = gpu;
-            this._cpu = cpu;
-            this._sticker = sticker;
+            _motherboard = motherboard;
+            _gpu = gpu;
+            _cpu = cpu;
+            _sticker = sticker;
         }
 
         public override string ToString()
         {
-            if (_gpu == null || _cpu == null||_motherBoard==null||_sticker==null) return "";
-            string details = $"{_cpu.GetType().Name}: {_cpu.Cores} cores, {_cpu.Price}$\n{_gpu.GetType().Name}: {_gpu.Color} color, {_gpu.Price}$\n{_motherBoard.GetType().Name}: {_motherBoard.Size} size, {_motherBoard.Price}$\n{_sticker.GetType().Name}: {_sticker.Hologram} hologram, {_sticker.Price}$";
+            if (_gpu == null || _cpu == null || _motherboard == null || _sticker == null) return "";
+            var details =
+                $"{_cpu.GetType().Name}: {_cpu.Cores} cores, {_cpu.Price}$\n{_gpu.GetType().Name}: {_gpu.Color} color, {_gpu.Price}$\n{_motherboard.GetType().Name}: {_motherboard.Size} size, {_motherboard.Price}$\n{_sticker.GetType().Name}: {_sticker.Hologram} hologram, {_sticker.Price}$";
             return details;
         }
 
         public string Price()
         {
-            if (_gpu == null || _cpu == null || _motherBoard == null || _sticker == null) return "";
+            if (_gpu == null || _cpu == null || _motherboard == null || _sticker == null) return "";
 
-            return $"Sum: {_gpu.Price + _cpu.Price + _motherBoard.Price + _sticker.Price}$";
+            return $"Sum: {_gpu.Price + _cpu.Price + _motherboard.Price + _sticker.Price}$";
         }
     }
 }

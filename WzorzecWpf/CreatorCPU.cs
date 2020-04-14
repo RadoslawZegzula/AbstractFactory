@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WzorzecWpf
 {
-    class CreatorCPU
+    internal class CreatorCPU
     {
         public CPU CreateCPU(EOriginCountry eOriginCountry)
         {
@@ -15,19 +11,19 @@ namespace WzorzecWpf
             switch (eOriginCountry)
             {
                 case EOriginCountry.Poland:
-                    cpu = new PolandFactory().CreateCPU();
+                    cpu = new PolandFactory().CreateCpu();
                     break;
                 case EOriginCountry.China:
-                    cpu = new ChinaFactory().CreateCPU();
+                    cpu = new ChinaFactory().CreateCpu();
                     break;
                 case EOriginCountry.Germany:
                     cpu = new GermanyFactory().CreateCPU();
                     break;
-
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(eOriginCountry), eOriginCountry, null);
             }
 
             return cpu;
         }
-
     }
 }

@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WzorzecWpf
 {
-    class CreatorMotherBoard
+    internal class CreatorMotherBoard
     {
-        public MotherBoard CreateMotherBoard(EOriginCountry eOriginCountry)
+        public Motherboard CreateMotherBoard(EOriginCountry eOriginCountry)
         {
-            MotherBoard motherboard = null;
-           
+            Motherboard motherboard = null;
+
             switch (eOriginCountry)
             {
                 case EOriginCountry.Poland:
@@ -23,11 +19,11 @@ namespace WzorzecWpf
                 case EOriginCountry.Germany:
                     motherboard = new GermanyFactory().CreateMotherBoard();
                     break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(eOriginCountry), eOriginCountry, null);
             }
 
             return motherboard;
         }
-
-
     }
 }

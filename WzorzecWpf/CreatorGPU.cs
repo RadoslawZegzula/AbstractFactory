@@ -1,31 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Diagnostics;//
+using System.Diagnostics;
 
 namespace WzorzecWpf
 {
-    public class CreatorGPU
+    public class CreatorGpu
     {
-        public GPU CreateGPU(EOriginCountry eOriginCountry)
+        public Gpu CreateGpu(EOriginCountry eOriginCountry)
         {
-            GPU gpu = null;
+            Gpu gpu = null;
 
             switch (eOriginCountry)
             {
                 case EOriginCountry.Poland:
-                    gpu = new PolandFactory().CreateGPU();
+                    gpu = new PolandFactory().CreateGpu();
                     break;
                 case EOriginCountry.China:
-                    gpu = new ChinaFactory().CreateGPU();
+                    gpu = new ChinaFactory().CreateGpu();
                     Debug.WriteLine("creator GPU");
                     break;
                 case EOriginCountry.Germany:
-                    gpu = new GermanyFactory().CreateGPU();
+                    gpu = new GermanyFactory().CreateGpu();
                     break;
-
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(eOriginCountry), eOriginCountry, null);
             }
 
             return gpu;

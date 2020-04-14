@@ -1,30 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
+﻿
 namespace WzorzecWpf
 {
-    class Client
+    internal class Client
     {
         private CPU _cpu;
-        private GPU _gpu;      
-        private MotherBoard _motherboard;
+        private Gpu _gpu;
+        private Motherboard _motherboard;
         private Sticker _sticker;
 
-        public void OrderGPU(EOriginCountry eOriginCountry)
+        public void OrderGpu(EOriginCountry eOriginCountry)
         {
-            var creatorGPU = new CreatorGPU();
-            _gpu = creatorGPU.CreateGPU(eOriginCountry);
-
+            var creatorGpu = new CreatorGpu();
+            _gpu = creatorGpu.CreateGpu(eOriginCountry);
         }
 
-        public void OrderCPU(EOriginCountry eOriginCountry)
+        public void OrderCpu(EOriginCountry eOriginCountry)
         {
-            var creatorCPU = new CreatorCPU();
-            _cpu = creatorCPU.CreateCPU(eOriginCountry);
+            var creatorCpu = new CreatorCPU();
+            _cpu = creatorCpu.CreateCPU(eOriginCountry);
         }
 
         public void OrderMotherBoard(EOriginCountry eOriginCountry)

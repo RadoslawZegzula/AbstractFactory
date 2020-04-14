@@ -1,29 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace WzorzecWpf
 {
-    public abstract class MotherBoard
+    public abstract class Motherboard
     {
         public int Size { get; set; }
         public double Price { get; set; }
 
     }
 
-    public class PolandMotherBoard : MotherBoard
+    public class PolandMotherboard : Motherboard
     {
 
     }
 
-    public class ChinaMotherBoard : MotherBoard
+    public class ChinaMotherboard : Motherboard
     {
 
     }
 
-    public class GermanyMotherBoard : MotherBoard
+    public class GermanyMotherboard : Motherboard
     {
 
     }

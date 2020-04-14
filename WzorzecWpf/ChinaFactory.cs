@@ -1,23 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WzorzecWpf
 {
-
-
-
-
-    /// <summary>
-    /// ///////creatory!!!!!!!!!!!!!!!!!!!
-    /// </summary>
-    class ChinaFactory
+    internal class ChinaFactory
     {
-        public GPU CreateGPU()
+        public Gpu CreateGpu()
         {
-            var gpu = new ChinaGPU
+            var gpu = new ChinaGpu
             {
                 Color = ConsoleColor.Magenta,
                 Price = 150.0
@@ -25,19 +14,19 @@ namespace WzorzecWpf
             return gpu;
         }
 
-        public MotherBoard CreateMotherBoard()
+        public Motherboard CreateMotherBoard()
         {
-            var motherboad = new ChinaMotherBoard
+            var motherboard = new ChinaMotherboard
             {
                 Size = 128,
                 Price = 250.0
             };
-            return motherboad;
+            return motherboard;
         }
 
-        public CPU CreateCPU()
+        public CPU CreateCpu()
         {
-            var cpu = new ChinaCPU
+            var cpu = new ChinaCpu
             {
                 Cores = 128,
                 Price = 250.0

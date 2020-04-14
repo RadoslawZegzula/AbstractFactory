@@ -8,6 +8,7 @@ using System.Windows;
 
 namespace WzorzecWpf
 {
+    /// <inheritdoc />
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>

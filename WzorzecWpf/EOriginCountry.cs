@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace WzorzecWpf
 {
     public enum EOriginCountry
     {
-        Poland, China, Germany
+        Poland,
+        China,
+        Germany
     }
 }

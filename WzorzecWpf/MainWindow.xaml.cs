@@ -1,18 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
 
 namespace WzorzecWpf
 {
@@ -21,12 +8,12 @@ namespace WzorzecWpf
     /// </summary>
     public partial class MainWindow : Window
     {     
-        private Client radek;
+        private readonly Client _radek;
 
         public MainWindow()
         {
             InitializeComponent();
-            radek = new Client();
+            _radek = new Client();
 
 
         }
@@ -41,23 +28,24 @@ namespace WzorzecWpf
             switch (phrase)
             {
                 case "CPU":
-                    radek.OrderCPU(eOriginCountry);
+                    _radek.OrderCpu(eOriginCountry);
                     break;
                 case "GPU":
-                    radek.OrderGPU(eOriginCountry);
+                    _radek.OrderGpu(eOriginCountry);
                     break;
                 case "MotherBoard":
-                    radek.OrderMotherBoard(eOriginCountry);
+                    _radek.OrderMotherBoard(eOriginCountry);
                     break;
                 case "Sticker":
-                    radek.OrderSticker(eOriginCountry);                   
+                    _radek.OrderSticker(eOriginCountry);                   
                     break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(eOriginCountry), eOriginCountry, null);
             }
-            var computer = radek.CreateComputer();           
+
+            var computer = _radek.CreateComputer();           
             Summary.Text = computer.ToString();
             Sum.Text = computer.Price();
-
-
         }
 
         private void CPUorigin1_OnSelected(object sender, RoutedEventArgs e)
@@ -75,7 +63,6 @@ namespace WzorzecWpf
             Controller(EOriginCountry.Germany, "CPU");
         }
 
-
         private void GPUorigin1_OnSelected(object sender, RoutedEventArgs e)
         {
             Controller(EOriginCountry.Poland, "GPU");
@@ -88,7 +75,6 @@ namespace WzorzecWpf
         {
             Controller(EOriginCountry.Germany, "GPU");
         }
-
 
         private void MotherBoardorigin1_OnSelected(object sender, RoutedEventArgs e)
         {
@@ -104,7 +90,6 @@ namespace WzorzecWpf
         {
             Controller(EOriginCountry.Germany,"MotherBoard");
         }
-
 
         private void Stickerorigin1_OnSelected(object sender, RoutedEventArgs e)
         {
