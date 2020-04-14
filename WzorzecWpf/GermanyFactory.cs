@@ -24,7 +24,7 @@ namespace WzorzecWpf
             return motherboad;
         }
 
-        public CPU CreateCPU()
+        public Cpu CreateCPU()
         {
             var cpu = new GermanyCpu
             {

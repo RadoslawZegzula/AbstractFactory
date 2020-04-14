@@ -3,7 +3,7 @@ namespace WzorzecWpf
 {
     internal class Client
     {
-        private CPU _cpu;
+        private Cpu _cpu;
         private Gpu _gpu;
         private Motherboard _motherboard;
         private Sticker _sticker;

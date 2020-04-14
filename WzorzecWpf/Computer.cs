@@ -3,12 +3,12 @@ namespace WzorzecWpf
 {
     internal class Computer
     {
-        private readonly CPU _cpu;
+        private readonly Cpu _cpu;
         private readonly Gpu _gpu;
         private readonly Motherboard _motherboard;
         private readonly Sticker _sticker;
 
-        public Computer(Motherboard motherboard, Gpu gpu, CPU cpu, Sticker sticker)
+        public Computer(Motherboard motherboard, Gpu gpu, Cpu cpu, Sticker sticker)
         {
             _motherboard = motherboard;
             _gpu = gpu;

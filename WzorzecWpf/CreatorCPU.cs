@@ -4,9 +4,9 @@ namespace WzorzecWpf
 {
     internal class CreatorCPU
     {
-        public CPU CreateCPU(EOriginCountry eOriginCountry)
+        public Cpu CreateCPU(EOriginCountry eOriginCountry)
         {
-            CPU cpu = null;
+            Cpu cpu = null;
 
             switch (eOriginCountry)
             {

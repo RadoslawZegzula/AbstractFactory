@@ -24,7 +24,7 @@ namespace WzorzecWpf
             return motherboard;
         }
 
-        public CPU CreateCpu()
+        public Cpu CreateCpu()
         {
             var cpu = new ChinaCpu
             {

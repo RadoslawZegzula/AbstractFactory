@@ -1,21 +1,21 @@
 ﻿
 namespace WzorzecWpf
 {
-    public abstract class CPU
+    public abstract class Cpu
     {
         public int Cores { get; set; }
         public double Price { get; set; }
     }
 
-    public class PolandCpu : CPU
+    public class PolandCpu : Cpu
     {
     }
 
-    public class ChinaCpu : CPU
+    public class ChinaCpu : Cpu
     {
     }
 
-    public class GermanyCpu : CPU
+    public class GermanyCpu : Cpu
     {
     }
 }
